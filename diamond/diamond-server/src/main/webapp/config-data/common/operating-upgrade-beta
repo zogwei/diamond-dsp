@@ -1,0 +1,12 @@
+#dubbo
+dubbo.application.owner=xusm
+dubbo.registry.address=zookeeper://192.168.3.104:2181
+dubbo.timeout=10000
+
+#file.upload
+file.upload.url=http://192.168.3.104:8130/file/upload
+
+#cas
+casServer=http://testsso.glsx.com.cn/cas
+serverName=http://testupgrade.oss.glsx.com.cn
+filter.exclusions=/css/*,/js/*,/images/*

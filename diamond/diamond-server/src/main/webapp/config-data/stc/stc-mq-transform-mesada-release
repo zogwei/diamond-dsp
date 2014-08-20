@@ -1,0 +1,9 @@
+#jms
+jms.broker.receive.url = tcp\://192.168.3.234\:61618
+jms.broker.save.url = tcp\://192.168.3.229\:61616
+jms.broker.fence.url = tcp\://192.168.3.230\:61616
+jms.broker.biz.url = tcp\://192.168.3.228\:61616
+jms.destination.queue.mesada=queue/glsx.stc.carposition
+jms.destination.poi.save=queue/glsx.poi.save
+jms.destination.poi.fence=queue/glsx.poi.fence
+jms.destination.poi.bizfence=queue/glsx.poi.bizfence

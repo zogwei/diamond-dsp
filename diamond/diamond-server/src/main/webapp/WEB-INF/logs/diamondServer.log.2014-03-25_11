@@ -1,0 +1,668 @@
+2014-03-25 11:02:30,405 INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2014-03-25 11:02:30,477 INFO  support.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Tue Mar 25 11:02:30 CST 2014]; root of context hierarchy
+2014-03-25 11:02:30,525 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-03-25 11:02:30,815 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@34adc40c: defining beans [servletContext,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,adminController,configController,loginController,notifyController,adminService,configService,diskService,notifyService,persistService,timerTaskService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2014-03-25 11:02:30,909 INFO  service.NotifyService - ï¿½Úµï¿½ï¿½Ð±ï¿½:{}
+2014-03-25 11:02:30,950 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/admin.do] onto handler 'adminController'
+2014-03-25 11:02:30,955 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/login.do] onto handler 'loginController'
+2014-03-25 11:02:30,959 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/notify.do] onto handler 'notifyController'
+2014-03-25 11:02:36,394 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2014-03-25 11:02:36,447 INFO  support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2014-03-25 11:02:36,450 ERROR service.DumpConfigInfoTask - dump task run error
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select count(id) from config_info order by id]; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=10000' at line 1
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:233)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:603)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=10000' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1031)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeSimpleNonQuery(StatementImpl.java:1463)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1875)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:644)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:587)
+	... 41 more
+2014-03-25 11:02:36,635 INFO  context.ContextLoader - Root WebApplicationContext: initialization completed in 6229 ms
+2014-03-25 11:02:36,677 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization started
+2014-03-25 11:02:36,679 INFO  support.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'diamond-servlet': startup date [Tue Mar 25 11:02:36 CST 2014]; parent: Root WebApplicationContext
+2014-03-25 11:02:36,681 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/diamond-servlet.xml]
+2014-03-25 11:02:36,703 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@12635e35: defining beans [viewResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@34adc40c
+2014-03-25 11:02:36,747 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization completed in 70 ms
+2014-03-25 11:04:25,347 INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2014-03-25 11:04:25,417 INFO  support.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Tue Mar 25 11:04:25 CST 2014]; root of context hierarchy
+2014-03-25 11:04:25,464 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-03-25 11:04:25,735 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@255cc5ba: defining beans [servletContext,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,adminController,configController,loginController,notifyController,adminService,configService,diskService,notifyService,persistService,timerTaskService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2014-03-25 11:04:25,829 INFO  service.NotifyService - ï¿½Úµï¿½ï¿½Ð±ï¿½:{}
+2014-03-25 11:04:25,861 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/admin.do] onto handler 'adminController'
+2014-03-25 11:04:25,868 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/login.do] onto handler 'loginController'
+2014-03-25 11:04:25,873 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/notify.do] onto handler 'notifyController'
+2014-03-25 11:04:31,153 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2014-03-25 11:04:31,224 INFO  support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2014-03-25 11:04:31,226 ERROR service.DumpConfigInfoTask - dump task run error
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [select id,data_id,group_id,content,md5 from config_info order by id  limit 0,1000]; SQL state [null]; error code [0]; Statement cancelled due to timeout or client request; nested exception is com.mysql.jdbc.exceptions.MySQLTimeoutException: Statement cancelled due to timeout or client request
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:83)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:80)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:80)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:603)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:78)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+Caused by: com.mysql.jdbc.exceptions.MySQLTimeoutException: Statement cancelled due to timeout or client request
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1757)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1867)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:644)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:587)
+	... 38 more
+2014-03-25 11:04:31,458 INFO  context.ContextLoader - Root WebApplicationContext: initialization completed in 6111 ms
+2014-03-25 11:04:31,495 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization started
+2014-03-25 11:04:31,498 INFO  support.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'diamond-servlet': startup date [Tue Mar 25 11:04:31 CST 2014]; parent: Root WebApplicationContext
+2014-03-25 11:04:31,499 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/diamond-servlet.xml]
+2014-03-25 11:04:31,519 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@46838f70: defining beans [viewResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@255cc5ba
+2014-03-25 11:04:31,559 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization completed in 64 ms
+2014-03-25 11:09:11,314 INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2014-03-25 11:09:11,390 INFO  support.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Tue Mar 25 11:09:11 CST 2014]; root of context hierarchy
+2014-03-25 11:09:11,435 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-03-25 11:09:11,712 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@78192b23: defining beans [servletContext,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,adminController,configController,loginController,notifyController,adminService,configService,diskService,notifyService,persistService,timerTaskService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2014-03-25 11:09:11,803 INFO  service.NotifyService - ï¿½Úµï¿½ï¿½Ð±ï¿½:{}
+2014-03-25 11:09:11,835 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/admin.do] onto handler 'adminController'
+2014-03-25 11:09:11,840 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/login.do] onto handler 'loginController'
+2014-03-25 11:09:11,846 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/notify.do] onto handler 'notifyController'
+2014-03-25 11:09:18,126 ERROR service.DumpConfigInfoTask - dump task run error
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Server connection failure during transaction. Due to underlying exception: 'java.sql.SQLException: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"'.
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.sql.SQLException
+MESSAGE: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"
+
+STACKTRACE:
+
+java.sql.SQLException: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1079)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2182)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:729)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:283)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:294)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1247)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1221)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:573)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+
+
+** END NESTED EXCEPTION **
+
+
+Attempted reconnect 3 times. Giving up.)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:573)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Server connection failure during transaction. Due to underlying exception: 'java.sql.SQLException: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"'.
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.sql.SQLException
+MESSAGE: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"
+
+STACKTRACE:
+
+java.sql.SQLException: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1079)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2182)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:729)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:283)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:294)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1247)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1221)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:573)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+
+
+** END NESTED EXCEPTION **
+
+
+Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1225)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 42 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Server connection failure during transaction. Due to underlying exception: 'java.sql.SQLException: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"'.
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.sql.SQLException
+MESSAGE: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"
+
+STACKTRACE:
+
+java.sql.SQLException: null,  message from server: "Host 'Lenovo-PC' is not allowed to connect to this MySQL server"
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1079)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2182)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:729)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:283)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:294)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1247)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1221)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:573)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+
+
+** END NESTED EXCEPTION **
+
+
+Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:985)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:729)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:283)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:294)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1247)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1221)
+	... 45 more
+2014-03-25 11:09:18,363 INFO  context.ContextLoader - Root WebApplicationContext: initialization completed in 7048 ms
+2014-03-25 11:09:18,402 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization started
+2014-03-25 11:09:18,405 INFO  support.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'diamond-servlet': startup date [Tue Mar 25 11:09:18 CST 2014]; parent: Root WebApplicationContext
+2014-03-25 11:09:18,406 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/diamond-servlet.xml]
+2014-03-25 11:09:18,426 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@78a9358: defining beans [viewResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@78192b23
+2014-03-25 11:09:18,464 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization completed in 62 ms
+2014-03-25 11:10:54,511 INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2014-03-25 11:10:54,585 INFO  support.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Tue Mar 25 11:10:54 CST 2014]; root of context hierarchy
+2014-03-25 11:10:54,632 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-03-25 11:10:54,913 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1285b0b9: defining beans [servletContext,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,adminController,configController,loginController,notifyController,adminService,configService,diskService,notifyService,persistService,timerTaskService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2014-03-25 11:10:55,007 INFO  service.NotifyService - ï¿½Úµï¿½ï¿½Ð±ï¿½:{}
+2014-03-25 11:10:55,040 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/admin.do] onto handler 'adminController'
+2014-03-25 11:10:55,045 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/login.do] onto handler 'loginController'
+2014-03-25 11:10:55,050 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/notify.do] onto handler 'notifyController'
+2014-03-25 11:10:58,379 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2014-03-25 11:10:58,433 INFO  support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2014-03-25 11:10:58,435 ERROR service.DumpConfigInfoTask - dump task run error
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select count(id) from config_info order by id]; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=10000' at line 1
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:233)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:603)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=10000' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1031)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeSimpleNonQuery(StatementImpl.java:1463)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1875)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:644)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:587)
+	... 41 more
+2014-03-25 11:10:58,651 INFO  context.ContextLoader - Root WebApplicationContext: initialization completed in 4140 ms
+2014-03-25 11:10:58,688 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization started
+2014-03-25 11:10:58,691 INFO  support.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'diamond-servlet': startup date [Tue Mar 25 11:10:58 CST 2014]; parent: Root WebApplicationContext
+2014-03-25 11:10:58,692 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/diamond-servlet.xml]
+2014-03-25 11:10:58,712 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@72b0185d: defining beans [viewResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@1285b0b9
+2014-03-25 11:10:58,753 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization completed in 65 ms
+2014-03-25 11:14:10,886 INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2014-03-25 11:14:10,956 INFO  support.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Tue Mar 25 11:14:10 CST 2014]; root of context hierarchy
+2014-03-25 11:14:11,003 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-03-25 11:14:11,276 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3383713c: defining beans [servletContext,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,adminController,configController,loginController,notifyController,adminService,configService,diskService,notifyService,persistService,timerTaskService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2014-03-25 11:14:11,366 INFO  service.NotifyService - ½ÚµãÁÐ±í:{}
+2014-03-25 11:14:11,399 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/admin.do] onto handler 'adminController'
+2014-03-25 11:14:11,404 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/login.do] onto handler 'loginController'
+2014-03-25 11:14:11,408 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/notify.do] onto handler 'notifyController'
+2014-03-25 11:14:16,570 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2014-03-25 11:14:16,629 INFO  support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2014-03-25 11:14:16,632 ERROR service.DumpConfigInfoTask - dump task run error
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select count(id) from config_info order by id]; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=10000' at line 1
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:233)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:603)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at com.taobao.diamond.server.service.TimerTaskService.init(TimerTaskService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:346)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:299)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=10000' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1031)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeSimpleNonQuery(StatementImpl.java:1463)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1875)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:644)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:587)
+	... 41 more
+2014-03-25 11:14:16,822 INFO  context.ContextLoader - Root WebApplicationContext: initialization completed in 5936 ms
+2014-03-25 11:14:16,863 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization started
+2014-03-25 11:14:16,866 INFO  support.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'diamond-servlet': startup date [Tue Mar 25 11:14:16 CST 2014]; parent: Root WebApplicationContext
+2014-03-25 11:14:16,867 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/diamond-servlet.xml]
+2014-03-25 11:14:16,887 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1a1ff7d1: defining beans [viewResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@3383713c
+2014-03-25 11:14:16,935 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization completed in 72 ms
+2014-03-25 11:24:20,889 ERROR service.DumpConfigInfoTask - dump task run error
+java.lang.Error: Unresolved compilation problem: 
+	The final local variable rowCount cannot be assigned. It must be blank and not using a compound assignment
+
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:60)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-03-25 11:24:57,511 INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2014-03-25 11:24:57,582 INFO  support.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Tue Mar 25 11:24:57 CST 2014]; root of context hierarchy
+2014-03-25 11:24:57,628 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-03-25 11:24:57,905 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@60d1a23c: defining beans [servletContext,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,adminController,configController,loginController,notifyController,adminService,configService,diskService,notifyService,persistService,timerTaskService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2014-03-25 11:24:58,002 INFO  service.NotifyService - ½ÚµãÁÐ±í:{}
+2014-03-25 11:24:58,038 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/admin.do] onto handler 'adminController'
+2014-03-25 11:24:58,045 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/login.do] onto handler 'loginController'
+2014-03-25 11:24:58,052 INFO  annotation.DefaultAnnotationHandlerMapping - Mapped URL path [/notify.do] onto handler 'notifyController'
+2014-03-25 11:25:01,423 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2014-03-25 11:25:01,480 INFO  support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2014-03-25 11:25:01,701 INFO  context.ContextLoader - Root WebApplicationContext: initialization completed in 4189 ms
+2014-03-25 11:25:01,738 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization started
+2014-03-25 11:25:01,740 INFO  support.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'diamond-servlet': startup date [Tue Mar 25 11:25:01 CST 2014]; parent: Root WebApplicationContext
+2014-03-25 11:25:01,741 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/diamond-servlet.xml]
+2014-03-25 11:25:01,761 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74da8d32: defining beans [viewResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@60d1a23c
+2014-03-25 11:25:01,806 INFO  servlet.DispatcherServlet - FrameworkServlet 'diamond': initialization completed in 68 ms

@@ -1,0 +1,13 @@
+#jdbc
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://192.168.3.105:3306/boss?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8
+jdbc.username=boss_user
+jdbc.password=ujr@#3$tp
+
+#cas
+server.name=http://testsso.glsx.com.cn/cas
+host.name=softBeta.glsx.com.cn
+cas.password.validate.date=90
+
+#boss
+boss.url=http://testoss.glsx.com.cn/main

@@ -1,0 +1,58 @@
+interceptors=kangaroo.paas.core.AuthInterceptor|kangaroo.paas.core.AttributeInterceptor|kangaroo.paas.core.SessionInterceptor
+#检查客户端连接线程执行间隔时间(以秒为单位)
+#im.server.msg.checkCon.seconds=3600
+#消息发送超时时间,以秒为单位
+#im.server.msg.heartbeat.seconds=15
+
+#cache server config
+#服务主机信息，如果按应用分组，
+#则包含应用appId,在主机后面 以 "(" 开始以 ")" 结束。多个用分号隔开
+#多个地址用,号隔开
+#默认是以用户分组
+cache.server.host=192.168.3.104
+cache.server.port=11211
+
+
+#session config
+session.server.host=192.168.3.104
+session.server.port=11212
+
+#common session expriy time (minute)
+session.expiration=30
+db.master.url=jdbc\:mysql\://192.168.3.105/glsx_ds?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.master.user=ds_user
+db.master.password=Abc123_beta
+db.slave.count=1
+db.slave1.url=jdbc\:mysql\://192.168.3.105/glsx_ds?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.slave1.user=ds_user
+db.slave1.password=Abc123_beta
+
+db.master.url2=jdbc\:mysql\://192.168.3.105/cyb_os?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.master.user2=os_user
+db.master.password2=G6y9Ofm4OPul
+db.slave.count2=1
+db.slave1.url2=jdbc\:mysql\://192.168.3.105/cyb_os?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.slave1.user2=os_user
+db.slave1.password2=G6y9Ofm4OPul
+
+#connection pool configuration
+max.connection = 7
+min.connection = 5
+init.connection = 5
+
+#app KEY
+illegalsearch_key=52dcba7cfaefb453cdf5f25aa889fc6c
+#get City
+illegalsearch_getcity_url=http://v.juhe.cn/wz/citys?key={0}
+#get ILLEGALSEARCH RECORD
+illegalsearch_getillegalrecord_url=http://v.juhe.cn/wz/query?dtype=xml&city={0}&hphm={1}&hpzl={2}&key={3}
+#get USERID
+encryption_url=http://testars.glsx.com.cn/dsInstance/GetEncryptedUserid.do
+#app KEY
+illegalsearch_weather_key=a66ea0ccc3be7757ac5fc44c6ebb1a0c
+#get ILLEGALSEARCH WEATHER
+illegalsearch_weather_url=http://v.juhe.cn/weather/index?dtype=json&cityname={0}&key={1}
+#Window xls
+#xls_file_src=d:\\xls
+#Linux xls
+xls_file_src=/data/file/IllegalSearch/

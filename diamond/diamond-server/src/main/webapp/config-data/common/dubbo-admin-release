@@ -1,0 +1,9 @@
+#cas
+casServer=http://sso.glsx.com.cn/cas
+serverName=http://122.13.170.20:6061
+filter.exclusions=/images/*,/css/*,/js/,/reg/,/lookup,/unreg/,/unregister/,/unregisterall/,/status/,/register/,/disable/,.ico,/rpc/,/error/,/sysinfo/dump/
+
+
+#dubbo
+dubbo.registry.address=zookeeper://192.168.3.35:2181
+dubbo.admin.root=1003

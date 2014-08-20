@@ -1,0 +1,35 @@
+#jdbc
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://192.168.3.105:3306/cyb_os?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=os_user
+jdbc.password=G6y9Ofm4OPul
+pool.initialPoolSize=10
+pool.minPoolSize=10
+pool.maxPoolSize=50
+pool.maxIdleTime=7200
+pool.acquireIncrement=5
+pool.checkoutTimeout=10000
+pool.maxIdleTimeExcessConnections=10
+
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.hbm2ddl.auto=update
+hibernate.show_sql=false
+hibernate.format_sql=true
+hibernate.query.substitutions=true 1, false 0
+hibernate.default_batch_fetch_size=16
+hibernate.max_fetch_depth=2
+hibernate.bytecode.use_reflection_optimizer=true
+hibernate.cache.use_second_level_cache=true
+hibernate.cache.use_query_cache=true
+hibernate.cache.use_structured_entries=true
+hibernate.generate_statistics=true
+
+#dubbo
+dubbo.application.owner=xusm
+dubbo.registry.address=zookeeper://192.168.3.104:2181
+
+#memcache configuration
+memcache.adress=192.168.3.104:11211
+
+#session
+session.expiresIn=1000000

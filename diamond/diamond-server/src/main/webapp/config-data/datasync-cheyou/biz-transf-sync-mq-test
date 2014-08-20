@@ -1,0 +1,32 @@
+#jdbc
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc\:mysql\://192.168.1.39/cyb_os?noAccessToProcedureBodies\=true&useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnectForPools\=true&autoReconnect\=true
+jdbc.username=os_user
+jdbc.password=os#123
+pool.initialPoolSize=10
+pool.minPoolSize=10
+pool.maxPoolSize=50
+pool.maxIdleTime=7200
+pool.acquireIncrement=5
+pool.checkoutTimeout=10000
+pool.maxIdleTimeExcessConnections=10
+
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.hbm2ddl.auto=update
+hibernate.show_sql=false
+hibernate.format_sql=true
+hibernate.query.substitutions=true 1, false 0
+hibernate.default_batch_fetch_size=16
+hibernate.max_fetch_depth=2
+hibernate.bytecode.use_reflection_optimizer=true
+hibernate.cache.use_second_level_cache=true
+hibernate.cache.use_query_cache=true
+hibernate.cache.use_structured_entries=true
+hibernate.generate_statistics=true
+
+#job
+fence.histroy.delete.cronTrigger=0 0 1 * * ?
+
+#jms
+jms.broker.url=tcp\://192.168.1.36\:61616
+jms.destination.fence.record=queue/glsx.fence.record

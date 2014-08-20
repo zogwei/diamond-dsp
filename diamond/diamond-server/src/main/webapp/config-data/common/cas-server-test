@@ -1,0 +1,13 @@
+#jdbc
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://192.168.1.19:3306/boss?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8
+jdbc.username=boss_user
+jdbc.password=gj#7$go
+
+#cas
+server.name=http://qcsso.glsx.net:7060/cas
+host.name=qc36.glsx.com
+cas.password.validate.date=90
+
+#boss
+boss.url=http://qcoss.glsx.net:7060/main

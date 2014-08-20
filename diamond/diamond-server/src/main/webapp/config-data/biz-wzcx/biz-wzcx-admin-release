@@ -1,0 +1,15 @@
+#\u8fd9\u4e2a\u6587\u4ef6\u7528\u4e8e\u9879\u76ee\u7684\u57fa\u672c\u914d\u7f6e
+#文件上传存放路径
+box.client.file.upload.path=/data/img/biz-wzcx-admin/
+#文件输出存放路径
+box.client.file.output.path=/data/img/biz-wzcx-admin/
+#\u6587\u4ef6\u4e0b\u8f7d\u8bfb\u53d6\u8def\u5f84
+box.client.file.read.path=http\://dvd.didihu.com.cn/wzcx-admin/
+#违章结果发送结果
+violationresults_url=http://csp.365car.com.cn/csp/illegal/pushIllegalMsg
+#新增有违章记录条数 
+illegal_total=30
+#操作人Id
+option_id=0
+#操作人姓名
+option_name=glsx

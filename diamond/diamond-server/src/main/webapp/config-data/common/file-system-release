@@ -1,0 +1,4 @@
+#文件上传的本地磁盘路径
+upload.file.path=/data/img/upload
+#文件访问的URL地址
+upload.file.url=http://img01.glsx.com.cn/upload

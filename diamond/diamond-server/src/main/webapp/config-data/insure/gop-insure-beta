@@ -1,0 +1,8 @@
+#dubbo
+dubbo.application.owner=dengwj
+dubbo.registry.address=zookeeper://192.168.3.104:2181
+
+#----upload file url 
+upload.server.path=/data/img/baox
+#--------------img service url  
+upload.access.path=http\://testimg01.glsx.com.cn/baox/

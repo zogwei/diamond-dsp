@@ -1,0 +1,66 @@
+#dubbo
+dubbo.registry.address=zookeeper://192.168.3.104:2181
+
+interceptors=kangaroo.paas.core.AuthInterceptor|kangaroo.paas.core.AttributeInterceptor|kangaroo.paas.core.SessionInterceptor
+
+#im.server.msg.checkCon.seconds=3600
+
+#im.server.msg.heartbeat.seconds=15
+
+#cache server config
+
+cache.server.host=192.168.3.104
+cache.server.port=11211
+
+
+#session config
+session.server.host=192.168.3.104
+session.server.port=11212
+
+#common session expriy time (minute)
+session.expiration=30
+db.master.url=jdbc\:mysql\://192.168.3.105/glsx_ds?noAccessToProcedureBodies\=true&useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnectForPools\=true&autoReconnect\=true
+db.master.user=ds_user
+db.master.password=Abc123_beta
+db.slave.count=1
+db.slave1.url=jdbc\:mysql\://192.168.3.105/glsx_ds?noAccessToProcedureBodies\=true&useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnectForPools\=true&autoReconnect\=true
+db.slave1.user=ds_user
+db.slave1.password=Abc123_beta
+
+db.master.url2=jdbc\:mysql\://192.168.3.105/cyb_os?noAccessToProcedureBodies\=true&useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnectForPools\=true&autoReconnect\=true
+db.master.user2=os_user
+db.master.password2=G6y9Ofm4OPul
+db.slave.count2=1
+db.slave1.url2=jdbc\:mysql\://192.168.3.105/cyb_os?noAccessToProcedureBodies\=true&useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnectForPools\=true&autoReconnect\=true
+db.slave1.user2=os_user
+db.slave1.password2=G6y9Ofm4OPul
+
+#connection pool configuration
+max.connection = 200
+min.connection = 50
+init.connection = 50
+
+
+cache_ip=192.168.3.104
+cache_port=11211
+cache_valid=600
+
+
+wzcx_url=http://api.sijibang.com/normal/realquery
+
+wzcx_city_url=http://wzdo.sijibang.com/query/citys
+
+wzcx_key=3F94622EB8894CC5AF50CB5DB80BEE83
+
+cycle=3
+
+repeat=2
+
+#违章结果推送车机url(修改)
+violationresults_url=http://testcsp.365car.com.cn:81/csp/illegal/pushIllegalMsg
+#违章查询key
+author_key=020e069b809a42e398454201c62cda95
+#操作人Id
+option_id=0
+#操作人姓名
+option_name=glsx

@@ -1,0 +1,13 @@
+#jdbc
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/boss?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8
+jdbc.username=root
+jdbc.password=
+
+#boss
+boss.url=http://localhost:8081/main
+
+#cas
+server.name=http://localhost:8080
+host.name=dev01
+cas.password.validate.date=90

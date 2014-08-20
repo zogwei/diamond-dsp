@@ -1,0 +1,31 @@
+#dubbo
+dubbo.application.owner=platform-container
+dubbo.registry.address=zookeeper://192.168.3.232:2181
+dubbo.timeout=30000
+
+session.expiration=30
+db.master.url=jdbc\:mysql\://192.168.1.19/cyb_os?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.master.user=os_user
+db.master.password=os#123
+db.slave.count=1
+db.slave1.url=jdbc\:mysql\://192.168.1.19/cyb_os?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.slave1.user=os_user
+db.slave1.password=os#123
+
+
+db.master.url2=jdbc\:mysql\://192.168.1.19/glsx_ds?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.master.user2=ds_user
+db.master.password2=Abc123_qc
+db.slave.count2=1
+db.slave1.url2=jdbc\:mysql\://192.168.1.19/glsx_ds?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.slave1.user2=ds_user
+db.slave1.password2=Abc123_qc
+
+#connection pool configuration
+max.connection = 5
+min.connection = 5
+init.connection = 5
+
+
+#memcache configuration
+memcache.adress=192.168.1.16:11211

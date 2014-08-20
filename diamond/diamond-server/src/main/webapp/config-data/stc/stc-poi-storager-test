@@ -1,0 +1,17 @@
+#jms
+jms.broker.url=tcp://192.168.1.36:61616
+jms.destination.poi.save=queue/glsx.poi.save
+jms.destination.fence.event=queue/glsx.fence.event
+
+#hadoop
+fs.default.name=hdfs://Master.Hadoop:8001
+hbase.rootdir=hdfs://Master.Hadoop:8001/hbase
+hbase.zookeeper.quorum=Slave1.Hadoop,Slave2.Hadoop,Slave3.Hadoop
+hbase.zookeeper.property.dataDir=/home/hadoop/zookeeper/data
+
+#hbase
+hbase.table.fenceEvent=fence_event_history_test
+hbase.table.poi=poi_history_test
+
+#hazelcast
+hazelcast.config.network.join.tcp-ip.members=127.0.0.1

@@ -1,0 +1,22 @@
+db.master.url=jdbc\:mysql\://192.168.3.200:3306/sync_data?useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnectForPools\=true&autoReconnect\=true
+db.master.user=sync_data_user
+db.master.password=Eorg%$j1
+
+#connection pool configuration
+max.connection = 5
+min.connection = 5
+init.connection = 5
+
+enAbleJob = 1
+exec.beginDate=2012-10-01
+exec.endDate=2013-11-21
+sync_job_tick_time=20
+
+#dubbo
+dubbo.application.owner=moxq,lisk
+dubbo.registry.address=zookeeper://192.168.3.35:2181
+
+#cas
+casServer=http://sso.glsx.com.cn/cas
+serverName=http://14.17.96.39:8114
+filter.exclusions=/css/*,/js/*,/images/*

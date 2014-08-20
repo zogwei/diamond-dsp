@@ -1,0 +1,16 @@
+# 接口地址
+glsx.map.mapabc.weather.uri=http://apis.mapabc.com/gss/simple
+# key
+glsx.map.mapabc.weather.key=1798f652d775c459f35a5466a07ba6a1cd54b8c8520d45b8be19f23958ae4591409f106ea4262085
+# 服务编码
+glsx.map.mapabc.weather.sid=1019
+# 请求ID
+glsx.map.mapabc.weather.rid=
+# 请求串编码
+glsx.map.mapabc.weather.encode=utf-8
+# 经纬度
+glsx.map.mapabc.weather.xys=
+# 返回数据格式,格式固定
+glsx.map.mapabc.weather.resType=json
+# 版本号
+glsx.map.mapabc.weather.ver=2.0

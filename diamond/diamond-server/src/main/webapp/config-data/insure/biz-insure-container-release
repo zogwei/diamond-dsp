@@ -1,0 +1,54 @@
+#dubbo
+dubbo.application.owner=dengwj
+dubbo.registry.address=zookeeper://192.168.3.35:2181
+
+#jdbc
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://192.168.3.200:3306/glsx_clb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=baox_user
+jdbc.password=baox#741#621
+pool.initialPoolSize=10
+pool.minPoolSize=10
+pool.maxPoolSize=50
+pool.maxIdleTime=7200
+pool.acquireIncrement=5
+pool.checkoutTimeout=10000
+pool.maxIdleTimeExcessConnections=10
+namingStrategy.tablePrefix=glsx_
+namingStrategy.isAddUnderscores=true
+namingStrategy.maxLength=64
+
+#hibernate
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.hbm2ddl.auto=update
+hibernate.show_sql=false
+hibernate.format_sql=true
+hibernate.query.substitutions=true 1, false 0
+hibernate.default_batch_fetch_size=16
+hibernate.max_fetch_depth=2
+hibernate.bytecode.use_reflection_optimizer=true
+hibernate.cache.use_second_level_cache=true
+hibernate.cache.use_query_cache=true
+hibernate.cache.use_structured_entries=true
+hibernate.generate_statistics=true
+
+
+clb.temp.zip.path=d:/dev/temp/zip
+clb.temp.excel.path=d:/dev/temp/excel
+#\u8F66\u53CB\u63A5\u53E3
+interface_URL=http\://ars.glsx.com.cn/
+
+clb_url=http\://baox.glsx.com.cn/
+#clb_url=http\://192.168.1.83:8080/
+
+super_merchant_id=34180019
+file.service.path=http\://img01.glsx.com.cn/baox/
+#api defined
+DSINSTANCE_PUSHMESSAGE=dsInstance/pushMsg.do
+ #parmas defined
+top_akey=25252
+top_lock=glsx
+
+SP_CODE=205243
+LOGIN_NAME =yfzx
+PASSWORD=yfzx123456

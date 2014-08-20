@@ -1,0 +1,11 @@
+#jms
+jms.broker.url=tcp://192.168.3.229:61616?jms.prefetchPolicy.all=2
+jms.destination.poi.save=queue/glsx.poi.save
+
+#hadoop
+fs.default.name=hdfs://Master.Hadoop:9000
+hbase.rootdir=hdfs://Master.Hadoop:9000/hbase
+hbase.zookeeper.quorum=Slave1.Hadoop,Slave2.Hadoop
+hbase.zookeeper.property.dataDir=/home/hadoop/zookeeper/data
+
+hazelcast.config.network.join.tcp-ip.members=127.0.0.1:5701

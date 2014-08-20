@@ -1,0 +1,22 @@
+#jdbc
+db.master.url=jdbc\:mysql\://192.168.3.200/cyb_os?noAccessToProcedureBodies\=true&useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnectForPools\=true&autoReconnect\=true
+db.master.user=os_user
+db.master.password=Cyb#9482@glsx
+
+#connection pool configuration
+max.connection = 5
+min.connection = 5
+init.connection = 5
+
+#mq
+jms.event.broker.url=tcp://192.168.3.230:61616
+jms.biz.broker.url=tcp://192.168.3.228:61616
+fence.mq.name=queue/glsx.poi.fenceevent
+mileage.mq.name=queue/glsx.obd.journey
+bizfence.mq.name=queue/glsx.poi.bizfence
+
+#time=>second
+biz.gap.poitime=90
+
+#hazelcast
+hazelcast.config.network.join.tcp-ip.members=127.0.0.1

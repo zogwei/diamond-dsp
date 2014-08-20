@@ -1,0 +1,123 @@
+#dubbo
+dubbo.application.owner=wujj
+dubbo.registry.address=zookeeper://192.168.3.104:2181
+dubbo.timeout=30000
+
+
+#--------------------------------------------------------------------------------------
+
+interceptors=kangaroo.paas.core.AuthInterceptor|kangaroo.paas.core.AttributeInterceptor|kangaroo.paas.core.SessionInterceptor
+#检查客户端连接线程执行间隔时间(以秒为单位)
+#im.server.msg.checkCon.seconds=3600
+#消息发送超时时间,以秒为单位
+#im.server.msg.heartbeat.seconds=15
+
+#cache server config
+#服务主机信息，如果按应用分组，
+#则包含应用appId,在主机后面 以 "(" 开始以 ")" 结束。多个用分号隔开
+#多个地址用,号隔开
+#默认是以用户分组
+cache.server.host=192.168.3.104
+cache.server.port=11211
+
+
+#MQ服务URL
+mq.server.url=tcp://testobdmq.glsx.net:61616
+#MQ服务名称
+mq.server.name=queue/glsx.obd.carinfo
+
+
+#session config
+session.server.host=192.168.3.104
+session.server.port=11212
+
+session.expiration=30
+db.master.url=jdbc\:mysql\://192.168.3.105/cyb_os?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.master.user=os_user
+db.master.password=G6y9Ofm4OPul
+db.slave.count=1
+db.slave1.url=jdbc\:mysql\://192.168.3.105/cyb_os?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.slave1.user=os_user
+db.slave1.password=G6y9Ofm4OPul
+
+
+db.master.url2=jdbc\:mysql\://192.168.3.105/glsx_ds?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.master.user2=ds_user
+db.master.password2=Abc123_beta
+db.slave.count2=1
+db.slave1.url2=jdbc\:mysql\://192.168.3.105/glsx_ds?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.slave1.user2=ds_user
+db.slave1.password2=Abc123_beta
+
+#connection pool configuration
+max.connection = 5
+min.connection = 5
+init.connection = 5
+
+
+
+#--------------------------------------------------------------------------------------
+
+##上传的文件图片等 路径
+static.domain=http\://testimg01.glsx.com.cn/cyb/
+	
+#---------------Sms_Config_Start-------------------------------#
+#企业号
+sms.spCode=205243
+sms.loginName=yfzx
+sms.password=yfzx123456
+sms.url=http://guangdong.ums86.com:8899/sms/Api/Send.do
+sms.expiretime=1800
+
+#---------------Sms_Config_End---------------------------------#
+
+glsx.infa.url=http://testars.glsx.com.cn/
+glsx.infa.akey=123
+glsx.infa.lock=123
+
+#glsx.infa.url=http://ars.glsx.com.cn/
+glsx.infa.item=dsInstance/
+glsx.infa.statisticBy=statisticByMerchant.do
+glsx.infa.365car.bootScreen=updateUserTerminal.do
+
+#获取系统消息接口 dsInstance 接口
+glsx.infa.systemMessage=getSystemMessageList.do
+
+#优惠信息条数
+glsx.infa.systemMessageCount=3
+
+#根据商户Id获取企业名片信息（优惠信息） dsInstance 接口
+glsx.infa.companyAcivityBy=getCompanyAcivityByMerchantId.do
+
+#######--FileUpload_Config_Start--################
+
+
+upload.server.path=/data/img/clb/
+upload.image.path=market/img/
+upload.sound.path=market/sound/
+upload.temp.path=market/temp/
+#######--CYB-API-END--##################=======
+
+#memcache configuration
+memcache.adress=192.168.3.104:11211
+
+##车云宝道路救援、维修保养请求推送到车云宝客户端
+ccs.api.sendmsg.url=http://testcyb.didihu.com.cn/cyb/api/sendmsg
+
+#接入平台地址
+access.platform.addresses=http://61.145.163.22/vna/
+#接入平台应用ID
+access.platform.vna_key=4446Q4XVD1PGMCB110OI
+
+
+#---------DD BOX---------------
+#DD BOX
+ddboxapi.url=http://61.145.163.22/vna
+ddboxapi.vna_key=4446Q4XVD1PGMCB110OI
+ddboxapi.sign=123
+
+#营销条，弹窗，开机画面
+ddboxapi.pushmsg= /msgContent/getPushMsg.do
+
+#重新上报
+smartbox.report.url=http://192.168.3.38:8112/

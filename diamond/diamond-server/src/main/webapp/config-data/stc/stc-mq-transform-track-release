@@ -1,0 +1,7 @@
+#jms
+jms.broker.track.url = tcp\://obdmq.glsx.com.cn\:61617
+jms.broker.save.url = tcp\://192.168.3.229\:61616
+jms.broker.fence.url = tcp\://192.168.3.230\:61616
+jms.destination.queue.track=queue/glsx.track.gpsdata
+jms.destination.poi.save=queue/glsx.poi.save
+jms.destination.poi.fence=queue/glsx.poi.fence

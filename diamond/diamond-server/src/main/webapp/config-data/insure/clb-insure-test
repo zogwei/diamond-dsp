@@ -1,0 +1,37 @@
+#dubbo
+dubbo.application.owner=dengwj
+dubbo.registry.address=zookeeper://192.168.1.36:2181
+
+
+#--------------------icon model standard(end)--------------------#
+#msdclb.url=http\://218.17.152.243:81/
+msdclb.url=http://testclb.365car.com.cn:81/
+#--------------------FILE  FTP --------------------------------------
+#--------------img service url  
+static.upload.path=/data/img/baox
+
+static.url.path=http\://qcimg01.glsx.net:7060/baox
+#static.upload.path=D\:/data/img/clb/baox/insure
+#-------------------------------------------------------------------------
+#interface_URL=http\://devars.glsx.net:7070/
+interface_URL=http\://qcars.glsx.net:7060/
+
+excel.export.path=excelFile
+#--------------------icon model standard(begin)--------------------#
+upload.ad.icon.heigth=105
+upload.ad.icon.width=610
+upload.ad.icon.maxSize=500000
+
+upload.insureinfo.icon.width=290
+upload.insureinfo.icon.heigth=240
+upload.insureinfo.icon.maxSize=500000
+
+#-------------------ds \u63A5\u53E3-------------------------------------------------------
+
+
+
+#--------------------------------------------------------------thumbImage
+#
+upload_insureinfo_thumb_width=114
+#
+upload_insureinfo_thumb_height=106

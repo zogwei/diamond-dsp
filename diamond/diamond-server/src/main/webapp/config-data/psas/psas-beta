@@ -1,0 +1,10 @@
+#dubbo
+dubbo.application.owner=wujj
+#dubbo.registry.address=zookeeper://192.168.3.238:9292
+dubbo.registry.address=zookeeper://127.0.0.1:2181
+dubbo.timeout=30000
+
+#database
+db.url=jdbc\:mysql\://192.168.3.105/glsx_psas?noAccessToProcedureBodies\=true&amp;useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.user=psas_user
+db.password=hgk%#dl

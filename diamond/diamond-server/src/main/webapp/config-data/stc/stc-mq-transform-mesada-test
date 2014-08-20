@@ -1,0 +1,7 @@
+#jms
+jms.broker.url=tcp\://127.0.0.1\:61618
+#jms.broker.url=tcp://14.17.96.55:61616
+jms.destination.queue.mesada=queue/glsx.stc.carposition
+jms.destination.poi.save=queue/glsx.poi.save
+jms.destination.poi.fence=queue/glsx.poi.fence
+jms.destination.poi.bizfence=queue/glsx.poi.bizfence

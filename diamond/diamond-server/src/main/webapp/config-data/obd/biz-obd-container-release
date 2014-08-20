@@ -1,0 +1,64 @@
+#jdbc
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://192.168.3.243:3306/data_obd?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=data_user
+jdbc.password=Release#data@cyb
+pool.initialPoolSize=10
+pool.minPoolSize=10
+pool.maxPoolSize=50
+pool.maxIdleTime=7200
+pool.acquireIncrement=5
+pool.checkoutTimeout=10000
+pool.maxIdleTimeExcessConnections=10
+namingStrategy.tablePrefix=glsx_
+namingStrategy.isAddUnderscores=true
+namingStrategy.maxLength=64
+
+
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.hbm2ddl.auto=update
+hibernate.show_sql=false
+hibernate.format_sql=true
+hibernate.query.substitutions=true 1, false 0
+hibernate.default_batch_fetch_size=16
+hibernate.max_fetch_depth=2
+hibernate.bytecode.use_reflection_optimizer=true
+hibernate.cache.use_second_level_cache=true
+hibernate.cache.use_query_cache=true
+hibernate.cache.use_structured_entries=true
+hibernate.generate_statistics=true
+
+#jms
+jms.broker.url = tcp\://obdmq.glsx.com.cn\:61617
+jms.destination.queue.common = queue/glsx.obd.common
+jms.destination.queue.journey = queue/glsx.obd.journey
+jms.destination.queue.warning = queue/glsx.obd.warning
+jms.destination.queue.poi = queue/glsx.obd.poi
+
+#dubbo
+dubbo.application.owner=luolj
+dubbo.registry.address=zookeeper://192.168.3.35:2181
+
+#jpush
+jpush.masterSecret=9df8a4bbca1a19396c4c2744
+jpush.appKey=c63b5ccab9f8b9f46d966757
+
+jpush.masterSecretIos=5d0d1bc964718bf6f38523a5
+jpush.appKeyIos=f5ee1e320950415dea3c3f2c
+
+jpush.settting=http://os.glsx.com.cn/os/api/common/queryAppPushConfig.do?appType=ODB
+
+jpush_wb.masterSecretIos=1bd0c152dfe02712dc5e46c2
+jpush_wb.appKeyIos=e0a262b8cbfd2e4e84f7419c
+
+jpush_wb.masterSecret=4d91b35befe080c1020f9541
+jpush_wb.appKey=40cc2f5283088805f2339a6d
+
+jms.broker.send.url = tcp\://192.168.3.230\:61616
+jms.destination.queue.send.journey = queue/glsx.obd.journey
+
+jms.broker.sendfence.url = tcp\://192.168.3.230\:61616
+jms.destination.queue.send.poi = queue/glsx.poi.fence
+
+#prefix
+obd.prefix.code=6140,6000

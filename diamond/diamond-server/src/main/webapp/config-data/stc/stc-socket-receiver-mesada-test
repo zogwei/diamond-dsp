@@ -1,0 +1,2 @@
+jms.broker.url=tcp\://127.0.0.1\:61618
+jms.destination.queue.carposition=queue/glsx.stc.carposition

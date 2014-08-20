@@ -1,0 +1,28 @@
+#dubbo
+dubbo.application.owner=platform-container
+dubbo.registry.address=zookeeper://192.168.1.36:2181
+dubbo.timeout=30000
+
+db.master.url=jdbc\:mysql\://192.168.1.39:3306/sync_data_online?useUnicode\=true&amp;characterEncoding\=UTF-8&amp;zeroDateTimeBehavior\=convertToNull&amp;autoReconnectForPools\=true&amp;autoReconnect\=true
+db.master.user=sdo_user
+db.master.password=5sfs0T0
+
+#connection pool configuration
+max.connection = 5
+min.connection = 5
+init.connection = 5
+
+enAbleJob = 1
+sync_job_tick_time=20
+
+#cas
+casServer=http://qcsso.glsx.net:7060/cas
+serverName=http://localhost:8015
+
+exec.updbeg=1
+
+selected.merchantId=11180023,22180100
+
+
+merchant.updFlag=0 
+user.updFlag=0

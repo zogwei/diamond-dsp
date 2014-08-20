@@ -1,0 +1,265 @@
+#dubbo333333333333333333333333333
+dubbo.application.owner=wujj
+dubbo.registry.address=zookeeper://192.168.3.104:2181
+dubbo.timeout=30000
+
+#######--FileUpload_Config_Start--################
+
+cyb.pagination.size=10
+##上传的文件图片等 路径
+static.domain=http\://testimg01.glsx.com.cn/cyb/
+#upload.dir=/data/img/cyb/
+upload.dir=/data/img/cyb/
+##文件临时目录
+#file.temp=/data/img/cyb/temp/
+file.temp=/data/img/cyb/temp/
+##营销分类
+marketing.classify.icon.url=classify/icon/
+##分类图标上传验证信息
+marketing.classify.icon.heigth=45
+marketing.classify.icon.width=45
+marketing.classify.icon.size=100
+##marketing.classify.icon.types=.+\\.+(jpg|png)
+
+##手机APP首页广告图片上传验证信息
+mobileapp.advertisement.adimage.url=mobileapp/advertisement/
+mobileapp.advertisement.adimage.heigth=2000
+mobileapp.advertisement.adimage.width=3000
+mobileapp.advertisement.adimage.size=1024
+
+##声音上传信息
+marketing.voice.upload.url=marketing/voice/
+marketing.voice.upload.size=2048
+
+
+##营销开机画面-图片验证信息
+marketing.bootscreen.image.url=bootScreen/img/
+marketing.bootscreen.image.heigth=480
+marketing.bootscreen.image.width=800
+marketing.bootscreen.image.size=500
+
+##营销开机画面-声音验证信息
+marketing.bootscreen.voice.url=bootScreen/sound/
+marketing.bootscreen.voice.size=500
+
+#车主营销开机画面
+marketing.msbootscreen.image.url=msBootScreen/img/
+marketing.msbootscreen.voice.url=msBootScreen/sound/
+marketing.msbootscreen.voice.size=2048
+
+
+#广告设置
+marketing.imgset.image.url=imgset/
+marketing.imgset.image.heigth=130
+marketing.imgset.image.width=425
+marketing.imgset.image.size=500
+
+
+upload.server.path=/data/img/clb/
+#upload.server.path=F:/apache-tomcat-7.0.39/webapps/glsx_clb_interface/
+
+upload.image.path=market/img/
+upload.sound.path=market/sound/
+upload.temp.path=market/temp/
+#######--CYB-API-END--##################=======
+
+
+########### 对车云宝前端接口上传文件路径 begin ############
+#车云宝导入客户excel接口上传文件路径
+glsx.operating_cyb.importuser.file.path=C:/Users/Administrator/Desktop/
+#导入设备文件模板下载路径
+glsx.operating_cyb.importdevice_template.file=C:/Users/Administrator/Desktop/importDeviceTemplateFile.xls
+#导入设备失败时，失败文件下载路径
+glsx.operating_cyb.importdevice_fail.file.path=C:/Users/Administrator/Desktop/
+########### 对车云宝前端接口上传文件路径 end ############
+
+
+
+
+	
+#---------------Sms_Config_Start-------------------------------#
+
+#企业号
+SP_CODE=205243
+LOGIN_NAME=yfzx
+PASSWORD=yfzx123456
+SMS_URL=http://guangdong.ums86.com:8899/sms/Api/Send.do
+
+sms.expiretime=1800
+
+#---------------Sms_Config_End---------------------------------#
+
+
+#######--CYB-API-BIN--##################
+api.url=http://xxxxxxxxxxxx
+
+
+msdapi.url=http://218.17.152.243:81
+#msdapi.url=http://clb.365car.com.cn
+
+
+#cyb 待完善车主资料
+cyb.PerfectOwner=/clb/custmoer/custmoer_center.html
+#cyb 保养预约请求
+cyb.MaintenApp=/clb/apps/maintenance_simplified/maintenance_center.html
+#道路救援请求
+cyb.RoadRescue=/clb/apps/roadhelp/roadHelp_center.html 
+
+    
+
+#营销方案默认图标
+cyb.marketingsolution=market/img/solution01.png
+# 待完善车主资料图标
+cyb.PerfectOwnerImg=market/img/u44_normal.png
+#保养预约请求地址图标
+cyb.MaintenAppImg=market/img/u38_normal.png
+#道路救援请求地址图标
+cyb.RoadRescueImg=market/img/u40_normal.png
+
+#文件访问地址
+cyb.uploadPath=http://testimg01.glsx.com.cn/cyb/
+
+
+
+#营销列表首页默认条数
+cyb.marindexlist=3
+
+
+glsx.infa.akey=123
+glsx.infa.lock=123
+
+
+#内部接口访问地址
+glsx.infa.url=http://testars.glsx.com.cn/
+#glsx.infa.url=http://ars.glsx.com.cn/
+glsx.infa.item=dsInstance/
+glsx.infa.statisticBy=statisticByMerchant.do
+
+#查询指定商户号的系统消息列表
+glsx.infa.systemMessage=getSystemMessageList.do
+
+#查询指定商户号的系统消息列表数
+glsx.infa.systemMessageCount=3
+
+
+#查询指定商户的车联宝企业名片活动列表
+glsx.infa.companyAcivityBy=getCompanyAcivityByMerchantId.do
+
+## 商户图片存放的目录
+merchant.image.url=merchant/image/
+## 商户图片大小
+merchant.image.heigth=480
+merchant.image.width=800
+merchant.image.size=1000
+
+## 商品图片存放的目录
+commodity.image.url=commodity/image/
+## 商品图片的大小
+commodity.image.heigth=800
+commodity.image.width=600
+commodity.image.size=1000
+
+## 商品icon存放的目录
+commodity.icon.url=commodity/icon/
+## 商品icon的大小
+commodity.icon.heigth=103
+commodity.icon.width=104
+commodity.icon.size=1000
+
+##极光推送
+jpush.appKey=c63b5ccab9f8b9f46d966757
+jpush.masterSecret=9df8a4bbca1a19396c4c2744
+jpush.timeToLive=86400
+
+##实时接口的url地址
+dsInstance.url=http://testars.glsx.com.cn/dsInstance/
+dsInstance.akey=akey
+dsInstance.lock=lock
+
+##商品车机终端图片存放的目录
+commodity.vehicleterminals.image.url=commodity/vehicleterminals/image/
+##商品车机终端图片的大小
+commodity.vehicleterminals.image.size=1000
+
+
+#memcache configuration
+memcache.adress=192.168.3.104:11211
+
+map.version=3.1.1
+map.key=f6c97a7f64063cfee7c2dc2157847204d4dbf093eb84c990610f20ab3181cc70998f7966b3e08f70
+##key自己要根据域名去map abc申请
+excel.page.length=10000
+
+# 车云宝广告存放的目录
+cyb.advertising.image.url=cyb/advertising/image/
+# 车云宝广告的大小(KB) 
+cyb.advertising.image.size=500
+# 车云宝广告的宽度 
+cyb.advertising.image.width=425
+# 车云宝广告的高度
+cyb.advertising.image.heigth=130
+
+##车云宝道路救援、维修保养请求推送到车云宝客户端
+ccs.api.sendmsg.url=http://testcyb.didihu.com.cn/cyb/api/sendmsg
+#嘀嘀虎web url
+dd.box.web=http://testboss.glsx.com.cn/
+#导航仪接口访问地址
+glsx.infa.push.popup=pushMsg.do
+
+upgrade.url=upgrade/app/
+upgrade.size=10000
+
+## 商户图标存放的目录
+merchant.icon.url=merchant/icon/
+## 商户图标大小
+merchant.icon.heigth=147
+merchant.icon.width=147
+merchant.icon.size=500
+
+#推送营销条
+glsx.infa.push.marway=push2MsgCenter.do
+
+#导航仪接口访问地址
+glsx.infa.push.popup=pushMsg.do
+
+
+
+upgrade.url=upgrade/app/
+upgrade.size=100000
+
+## 商户图标存放的目录
+merchant.icon.url=merchant/icon/
+## 商户图标大小
+merchant.icon.heigth=147
+merchant.icon.width=147
+merchant.icon.size=500
+
+
+#---------DD BOX---------------
+#DD BOX
+#地址
+ddboxapi.url= http://61.145.163.22/vna
+ddboxapi.vna_key=4446Q4XVD1PGMCB110OI
+ddboxapi.sign=123
+
+#推送消息 营销条 弹窗
+ddboxapi.pushmsg= msgContent/getPushMsg.do
+
+#cas
+casServer=http://192.168.1.38:8089/cas
+serverName=http://localhost:8081
+filter.urls=/api|/login
+
+##品牌LOGO
+brand.logo.adimage.url=configuration/carbrand/
+brand.logo.adimage.heigth=1004
+brand.logo.adimage.width=1024
+brand.logo.adimage.size=1024
+
+#极光IOS推送
+jpush.ios.appKey=336dc1251be26a30cdf9cd93
+jpush.ios.masterSecret=9ebec8a5a2eac2d17c6088d5
+
+#百度地图版本及key
+baidu.map.version=2.0
+baidu.map.key=SKmTuIuVazhlaRnlqYRsjeXO

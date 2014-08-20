@@ -1,0 +1,54 @@
+2013-10-23 10:08:37,531 ERROR service.DumpConfigInfoTask - dump task run error
+org.springframework.dao.RecoverableDataAccessException: PreparedStatementCallback; SQL [select count(id) from config_info order by id]; Communications link failure
+
+Last packet sent to the server was 0 ms ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:98)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:80)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:603)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:637)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:666)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:674)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:729)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:745)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForInt(JdbcTemplate.java:776)
+	at com.taobao.diamond.server.utils.PaginationHelper.fetchPage(PaginationHelper.java:58)
+	at com.taobao.diamond.server.service.PersistService.findAllConfigInfo(PersistService.java:195)
+	at com.taobao.diamond.server.service.DumpConfigInfoTask.run(DumpConfigInfoTask.java:34)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:181)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:205)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:885)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeSimpleNonQuery(StatementImpl.java:1463)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1875)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:93)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:644)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:587)
+	... 18 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
